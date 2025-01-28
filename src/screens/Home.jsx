@@ -1,7 +1,9 @@
-import { FlatList, ImageBackground, StatusBar, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
-import React from 'react';
+import { ActivityIndicator, FlatList, ImageBackground, StatusBar, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { REACT_APP_WEATHER_API_KEY } from '../../config';
 
-const url = `https://api.openweathermap.org/data/2.5/weather?lat=30.73&lon=76.77&appid=e6f485d05d140ca676721d5496c118e5&units=metric`
+const BASE_URL = `https://api.openweathermap.org/data/2.5/weather`
+const API_KEY = REACT_APP_WEATHER_API_KEY;
 
 const DATA = [
     {
@@ -31,6 +33,26 @@ const DATA = [
 ];
 
 export default function Home() {
+  const [weather, Setweather] = useState();
+
+  const fetchWeather = async() => {
+    const lat = 30.73;
+    const lon = 76.77;
+    const result = await fetch(`${BASE_URL}?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`);
+    const data = await result.json();
+    console.log(data);
+    
+    Setweather(data);
+  };
+
+  useEffect(() =>{
+    fetchWeather();
+  },[]);
+
+  if(!weather){
+    <ActivityIndicator />;
+  }
+
   return (
     <View style={styles.container}>
       <StatusBar backgroundColor={'#000'}/>
