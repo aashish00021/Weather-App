@@ -11,19 +11,19 @@ const DATA = [
         temp: 12,
     },
     {
-        city:'Mohali',
+        city:'Chandigarh',
         time: new Date(Date.now()).toLocaleTimeString(),
         weather: 'Clear',
         temp: 12,
     },
     {
-        city:'Mohali',
+        city:'Delhi',
         time: new Date(Date.now()).toLocaleTimeString(),
         weather: 'Clear',
         temp: 12,
     },
     {
-        city:'Mohali',
+        city:'Zirakpur',
         time: new Date(Date.now()).toLocaleTimeString(),
         weather: 'Clear',
         temp: 12,
