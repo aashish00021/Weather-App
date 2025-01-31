@@ -5,33 +5,6 @@ import { REACT_APP_WEATHER_API_KEY } from '../../config';
 const BASE_URL = `https://api.openweathermap.org/data/2.5/weather`
 const API_KEY = REACT_APP_WEATHER_API_KEY;
 
-const DATA = [
-    {
-        city:'Mohali',
-        time: new Date(Date.now()).toLocaleTimeString(),
-        weather: 'Clear',
-        temp: 12,
-    },
-    {
-        city:'Chandigarh',
-        time: new Date(Date.now()).toLocaleTimeString(),
-        weather: 'Clear',
-        temp: 12,
-    },
-    {
-        city:'Delhi',
-        time: new Date(Date.now()).toLocaleTimeString(),
-        weather: 'Clear',
-        temp: 12,
-    },
-    {
-        city:'Zirakpur',
-        time: new Date(Date.now()).toLocaleTimeString(),
-        weather: 'Clear',
-        temp: 12,
-    },
-];
-
 export default function Home() {
   const [weather, setWeather] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
